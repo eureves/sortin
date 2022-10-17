@@ -9,8 +9,8 @@ type Props = {
 const ButtonsBlock: FunctionComponent<Props> = ({ startHandler, nextStepHandler }) => {
   return (
     <div className="flex gap-2">
-      <BlockButton label="auto" callback={startHandler} />
-      <BlockButton label="next step" callback={nextStepHandler} />
+      <BlockButton label="Auto" callback={startHandler} />
+      <BlockButton label="Next Step" callback={nextStepHandler} />
     </div>
   );
 };

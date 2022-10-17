@@ -7,13 +7,15 @@ type Props = {
 
 const SortingView: FunctionComponent<Props> = ({ array }) => {
   return (
-    <motion.ul animate className="flex flex-row gap-2 items-end">
+    <motion.ul animate className="flex flex-row gap-1 items-end">
       {array.map((el) => {
         return (
           <motion.li
-            key={el}
             layout
-            className="bg-red-400 w-5 rounded p-10"
+            transition={{
+              duration: 0.1,
+            }}
+            className="bg-red-400 w-5 rounded p-2"
             style={{ height: (el / array.length) * 300 }}
           >
             <p className="flex justify-center">{el}</p>
