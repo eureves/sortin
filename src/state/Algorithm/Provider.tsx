@@ -20,8 +20,8 @@ export const AlgorithmContextProvider: FunctionComponent<Props> = ({ children })
   const [currentAlgo, setCurrentAlgo] = useState<string>("bubbleSort");
 
   const setAlgorithm = (name: string) => {
+    algorithmChange(algorithms[name](array));
     setCurrentAlgo(name);
-    algorithmChange(algorithms[currentAlgo](array));
   };
 
   useEffect(() => {
