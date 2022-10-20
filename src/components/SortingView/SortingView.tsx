@@ -3,22 +3,30 @@ import { FunctionComponent } from "react";
 
 type Props = {
   array: number[];
+  selected: number[];
 };
 
-const SortingView: FunctionComponent<Props> = ({ array }) => {
+const SortingView: FunctionComponent<Props> = ({ array, selected }) => {
   return (
-    <motion.ul animate className="flex flex-row gap-1 items-end">
-      {array.map((el) => {
+    <motion.ul
+      animate
+      className="w-full h-2/3 flex flex-row items-end justify-center p-2 bg-main border border-dark rounded"
+    >
+      {array.map((el, index) => {
         return (
           <motion.li
             layout
+            key={el}
             transition={{
-              duration: 0.1,
+              type: "tween",
+              duration: 0.2,
             }}
-            className="bg-red-400 w-5 rounded p-2"
-            style={{ height: (el / array.length) * 300 }}
+            className={"grow rounded border border-dark lg:mx-2".concat(
+              selected.includes(index) ? " bg-red" : " bg-yellow"
+            )}
+            style={{ height: (el / array.length) * 70 }}
           >
-            <p className="flex justify-center">{el}</p>
+            <p className="hidden lg:flex justify-center ">{el}</p>
           </motion.li>
         );
       })}

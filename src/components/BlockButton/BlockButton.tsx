@@ -4,7 +4,7 @@ type Props = { label: string; callback: () => void };
 
 const BlockButton: FunctionComponent<Props> = ({ label, callback }) => {
   return (
-    <button className="rounded-xl p-2 bg-slate-300" onClick={callback}>
+    <button className="rounded-lg p-2 bg-main border border-dark" onClick={callback}>
       {label}
     </button>
   );
